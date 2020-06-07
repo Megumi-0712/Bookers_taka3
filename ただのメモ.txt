@@ -1,0 +1,5 @@
+userモデル系：index(ユーザー一覧),show（マイページ）,edit（自分のみできるように）
+必要なコントローラー：index,create,edit,show,update
+
+books系:index（投稿されたもの）,show（投稿記事の詳細）,edit（自分のみできるように）
+必要なコントローラー：index,new,create,edit,show,update,destroy
