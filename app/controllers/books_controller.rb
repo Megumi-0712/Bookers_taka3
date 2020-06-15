@@ -17,7 +17,6 @@ class BooksController < ApplicationController
 		    flash[:notice] = "You have creatad book successfully."
 		    redirect_to book_path(Book.last)
       else
-        flash.now[:error]
   		  render :show
       end
   end
@@ -29,7 +28,7 @@ class BooksController < ApplicationController
   end
 
   def edit
-    @user = Book.find(params[:id])
+    @book = Book.find(params[:id])
   end
 
   def update
@@ -38,7 +37,6 @@ class BooksController < ApplicationController
         flash[:notice] = "You have updated book successfully."
         redirect_use_path(@Book.id)
       else
-        flash.now[:error]
         render :edit
       end
   end

@@ -22,7 +22,7 @@ class UsersController < ApplicationController
         @user = User.create(user_params)
         if @user.save
             flash[:notice] = "Welcome! You have signed up successfully."
-            redirect_to use_path(@user.id)
+            redirect_to user_path(@user.id)
         else
             render :new
         end

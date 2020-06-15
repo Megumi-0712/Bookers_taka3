@@ -13,6 +13,16 @@
 					</tr>
 					<tr>
 						<th><strong>name</strong></th>
+						<th><% if user_signed_in? && current_user.id.to_s == params[:id] %>
+						<%= current_user.name %>
+						<% else %>
+						<%= event.user.name %>
+						<% end %>
+					</th>
+
+
+					</tr>
+					<tr>
 						<th><strong>Introduction</strong></th>
 					</tr>
 				</thead>
