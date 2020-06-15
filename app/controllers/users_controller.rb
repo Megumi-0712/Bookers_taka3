@@ -8,6 +8,10 @@ class UsersController < ApplicationController
         @users = User.all
     end
 
+    def new
+        @user = User.new
+    end
+
 	def show
         @user = User.find(params[:id])
         @books = @user.books
@@ -15,12 +19,12 @@ class UsersController < ApplicationController
     end
 
     def create
-        @user = User.find(paranms[:id])
-        if user user.authenticate(params[:session][:password])
+        @user = User.create(user_params)
+        if @user.save
             flash[:notice] = "Welcome! You have signed up successfully."
             redirect_to use_path(@user.id)
         else
-            flash[:error]
+            render :new
         end
     end
 
