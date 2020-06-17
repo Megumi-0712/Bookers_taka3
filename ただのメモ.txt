@@ -4,6 +4,7 @@ userモデル系：index(ユーザー一覧),show（マイページ）,edit（�
 books系:index（投稿されたもの）,show（投稿記事の詳細）,edit（自分のみできるように）
 必要なコントローラー：index,new,create,edit,show,update,destroy
 
+ログインしているがログインしていない状態の場合でもユーザー詳細画面にいけるようにしたい
 
 
 作業手順
