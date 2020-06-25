@@ -1,2 +1,9 @@
-ユーザー変更画面（自分だけが編集できる）
-users/[id]/editとURLに表示されるように
+<h2>User info</h2>
+
+<%= form_for(@user) do |f| %>
+	<%= f.text_field :name %>
+	<%= attachment_image_tag @user, :image, :fill, 60,60, fallback: "no_image.jpg" %>
+	<%= f.attachment_field :image %>
+	<%= f.text_area :introduction %>
+	<%= f.submit "Update User" %>
+<% end %>

@@ -1,1 +1,8 @@
 Books投稿一覧
+
+<% if @book.errors.any? %>
+	<%= pluralize(@book.errors.count, "error") %> prohibited this obj from being saved:
+					<% @book.errors.full_messages.each do |message| %>
+					<%= message %>
+					<% end %>
+				<% end %>
