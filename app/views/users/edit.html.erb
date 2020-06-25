@@ -1,9 +1,28 @@
-<h2>User info</h2>
+<div class="container">
+	<div class="row content">
+		<div class="col-xs-3">
+			<h2>User info</h2>
 
-<%= form_for(@user) do |f| %>
-	<%= f.text_field :name %>
-	<%= attachment_image_tag @user, :image, :fill, 60,60, fallback: "no_image.jpg" %>
-	<%= f.attachment_field :image %>
-	<%= f.text_area :introduction %>
-	<%= f.submit "Update User" %>
-<% end %>
+			<% if @user.errors.any? %>
+					<%= pluralize(@user.errors.count, "error") %> prohibited this obj from being saved:
+					<% user.errors.full_messages.each do |message| %>
+							<%= message %>
+					<% end %>
+				<% end %>
+
+			<%= form_for(@user) do |f| %>
+				<%= f.text_field :name %>
+				<%= attachment_image_tag @user, :image, :fill, 60,60, fallback: "no_image.jpg" %>
+				<%= f.attachment_field :image %>
+				<%= f.text_area :introduction %>
+				<%= f.submit "Update User" %>
+			<% end %>
+		</div>
+	</div>
+	<div class="row">
+				<div class="col-sm-4"></div>
+				<div class="col-sm-4"></div>
+				<div class="col-sm-4">CopyRight Infratop.inc</div>
+			</div>
+		</div>
+</div>
