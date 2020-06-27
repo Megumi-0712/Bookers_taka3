@@ -41,13 +41,6 @@
 
 			<h2>New book</h2>
 
-				<% if @book.errors.any? %>
-					<%= pluralize(@book.errors.count, "error") %> prohibited this obj from being saved:
-					<% @book.errors.full_messages.each do |message| %>
-						<%= message %>
-					<% end %>
-				<% end %>
-
 				<!-- form_for部分 -->
 				<%= form_for(@book,url: '/books' ) do |f| %>
 

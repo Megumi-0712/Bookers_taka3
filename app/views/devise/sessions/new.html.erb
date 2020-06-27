@@ -4,9 +4,9 @@
     <h2>Log in</h2>
 
     <% if @user.errors.any? %>
-      <p>error</p>
+      <%= pluralize(@user.errors.count, "error") %> prohibited this obj from being saved:
       <% @user.errors.full_messages.each do |message| %>
-      <%= message %>
+        <li><%= message %></li>
       <% end %>
     <% end %>
 
