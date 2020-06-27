@@ -9,15 +9,16 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-inverse navbar-static-top">
-  <div class="container">
-    <div class="navbar-header">
-      <span class="header_title">Bookers</span>
-    </div>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <span class="header_title">Bookers</span>
+          </div>
 
-      <ul class="nav navbar-nav navbar-right">
-        <% if user_signed_in? %>
-          <li><%= link_to user_path(current_user), class:"my-bt" do %>
+          <ul class="nav navbar-nav navbar-right">
+          <% if user_signed_in? %>
+            <li><%= link_to user_path(current_user), class:"my-bt" do %>
               <i class="glyphicon glyphicon-home"></i>　Home</li><% end %>
             <li><%= link_to users_path, class:"my-bt" do %>
               <i class="glyphicon glyphicon-user"></i>　Users</li><% end %>
@@ -34,12 +35,13 @@
               <i class="glyphicon glyphicon-user"></i>　Sign up</li><% end %>
             <li><%= link_to new_user_session_path, class:"my-bt" do %>
               <i class="glyphicon glyphicon-log-in"></i>　login</li><% end %>
-        <% end %>
-    </ul>
-  </div>
-</nav>
-<div class="container">
-<%= yield %>
-<div>
+          <% end %>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <div class="container">
+    <%= yield %>
+    <div>
   </body>
 </html>
