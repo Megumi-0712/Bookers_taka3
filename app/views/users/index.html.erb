@@ -11,27 +11,28 @@
 						<th></th>
 						<th></th>
 					</tr>
+
 					<tr>
 						<th><strong>name</strong></th>
-						<th><% if user_signed_in? && current_user.id.to_s == params[:id] %>
-						<%= current_user.name %>
-						<% else %>
-						<%= event.user.name %>
-						<% end %>
+						<th>
+							<% if user_signed_in? && current_user.id.to_s == params[:id] %>
+								<%= current_user.name %>
+							<% end %>
 						</th>
 					</tr>
+
 					<tr>
 						<th><strong>Introduction</strong></th>
-						<th><% if user_signed_in? && current_user.id.to_s == params[:id] %>
-						<%= current_user.name %>
-						<% else %>
-						<%= event.user.name %>
-						<% end %>
+						<th>
+							<% if user_signed_in? && current_user.id.to_s == params[:id] %>
+								<%= current_user.name %>
+							<% end %>
+						</th>
 					</tr>
 				</thead>
 			</table>
 
-			<% if current_user.id == @user.id %>
+			<% if current_user.id == @user.id do %>
 			<div>
 				<%= link_to edit_user_path, class: "btn btn-default btn-block" do %>
 					<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
@@ -55,29 +56,23 @@
 			</div>
 
 		<div class="col-sm-9">
-			<h2>Books</h2>
+			<h2>Users</h2>
 			<table class="table">
 				<thead>
 					<tr>
 						<th>image</th>
 						<th>name</th>
-					</tr>
-				</thead>
-				<tbody>
-				<% @books.each do |book| %>
-					<tr>
-						<td>
 						<%= user.iamge %>
 						</td>
 						<td>
 						<%= user.name %>
 						</td>
 						<td>
-							<%= link_to "Show", show_user_path(current_user) %>
+						<%= link_to "Show", show_user_path(current_user) %>
 						</td>
 					</tr>
 				<% end %>
-				</tbody>
+				</thead>
 			</table>
 		</div>
 

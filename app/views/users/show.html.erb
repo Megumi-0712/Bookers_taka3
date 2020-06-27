@@ -1,90 +1,31 @@
-<div class="container">
-	<div class="row content">
-		<div class="col-xs-3">
-			<h2>User info</h2>
-			<div class="profile-image">
-				<%= attachment_image_tag @user, :profile_image, :fill, 40, 40, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg" %>
-			</div>
-			<table class="table">
-				<thead>
-					<tr>
-						<th></th>
-						<th></th>
-					</tr>
-					<tr>
-						<th><strong>name</strong></th>
-						<th><% if user_signed_in? && current_user.id.to_s == params[:id] %>
-						<%= current_user.name %>
-						<% else %>
-						<%= event.user.name %>
-						<% end %>
-						</th>
-					</tr>
-					<tr>
-						<th><strong>Introduction</strong></th>
-						<th><% if user_signed_in? && current_user.id.to_s == params[:id] %>
-						<%= current_user.introduction %>
-						<% else %>
-						<%= event.user.intorduction %>
-						<% end %>
-					</tr>
-				</thead>
-			</table>
+<div class="row">
 
-			<% if current_user.id == @user.id %>
-			<div>
-				<%= link_to edit_user_path, class: "btn btn-default btn-block" do %>
-					<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
-				<% end %>
-			</div>
-			<% end %>
+<%= render 'users/template', user: @user, book: @book %>
 
-			<h2>New book</h2>
 
-				<!-- form_for部分 -->
-				<%= form_for(@book,url: '/books' ) do |f| %>
+<div class="col-xs-9">
+	<h2>Books</h2>
+	<table class="table table-hover table-inverse">
 
-					<h4>title</h4>
-					<%= f.text_field :title %>
+		<tr>
+			<th></th>
+			<th>Title</th>
+			<th>opinion</th>
+		</tr>
 
-					<h4>opinion</h4>
-					<%= f.text_area :body %>
+		<% @books.each do |book| %>
+		
+		<tr>
+			<td><%= user.name %></td>
 
-					<br><%= f.submit 'Create Book' %>
-				<% end %>
-			</div>
-
-		<div class="col-sm-9">
-			<h2>Books</h2>
-			<table class="table">
-				<thead>
-					<tr>
-						<th>Title</th>
-						<th>opinion</th>
-					</tr>
-				</thead>
-				<tbody>
-				<% @books.each do |book| %>
-					<tr>
-						<td>
-						<%= user.name %>
-						</td>
-						<td>
-						<%= book.title %>
-						</td>
-						<td>
-						<%= book.body %>
-						</td>
-					</tr>
-				<% end %>
-				</tbody>
-			</table>
-		</div>
-
-		<div class="row">
-			<div class="col-sm-4"></div>
-			<div class="col-sm-4"></div>
-			<div class="col-sm-4">CopyRight Infratop.inc</div>
-		</div>
-	</div>
+			<td><%= book.title %></td>
+			
+			<td><%= book.body %></td>
+		</tr>
+		
+		<% end %>
+	</table>
 </div>
+</div>
+
+		
