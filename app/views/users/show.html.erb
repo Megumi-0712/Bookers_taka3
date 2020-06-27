@@ -23,9 +23,9 @@
 					<tr>
 						<th><strong>Introduction</strong></th>
 						<th><% if user_signed_in? && current_user.id.to_s == params[:id] %>
-						<%= current_user.name %>
+						<%= current_user.introduction %>
 						<% else %>
-						<%= event.user.name %>
+						<%= event.user.intorduction %>
 						<% end %>
 					</tr>
 				</thead>
@@ -50,7 +50,7 @@
 					<h4>opinion</h4>
 					<%= f.text_area :body %>
 
-					<br><%= f.submit 'create Book' %>
+					<br><%= f.submit 'Create Book' %>
 				<% end %>
 			</div>
 
