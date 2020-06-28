@@ -3,7 +3,7 @@
 		<h2>Book detail</h2>
 		<table class="table">
 			<tbody>
-					<td>
+					<td><%= attachment_image_tag @user, :profile_image, :fill, 20, 20, format: 'jpg',fallback: "no_image.jpg" %>
 					</td>
 
 					<td>
@@ -15,10 +15,10 @@
 					</td>
 
 					<td>
-					<%= link_to"Edit", edit_book_path,class: "btn btn-success" %>
+					<%= link_to"Edit", edit_book_path,class: "btn btn-success btn-xs" %>
 					</td>
 
-					<td><%= link_to"Destroy", book_path(:id), method: :delete, class: "btn btn-link", "data-confirm" => "本当に消しますか？" %>
+					<td><%= link_to"Destroy", book_path(:id), method: :delete, class: "btn btn-danger btn-xs", "data-confirm" => "本当に消しますか？" %>
 					</td>
 				</tr>
 			</tbody>

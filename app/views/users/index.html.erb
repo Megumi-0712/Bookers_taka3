@@ -16,9 +16,7 @@
 				<% @users.each do |user| %>
 					<tr>
 						<td>
-							<div class="img">
 						  <%= attachment_image_tag user, :profile_image, :fill, 20, 20, format: 'jpg',fallback: "no_image.jpg" %>
-						</div>
 						</td>
 
 						<td>
