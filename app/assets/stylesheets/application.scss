@@ -16,6 +16,10 @@
     @import "bootstrap-sprockets";
     @import "bootstrap";
 
+.body {
+	margin-top: 51px;
+}
+
 .navbar-fixed-top {
 	top: 0;
 	border-width: 0 0 1px;
@@ -33,11 +37,43 @@
     font-weight: normal;
 }
 
+.field row {
+	margin-bottom: 10px;
+}
+
 .col-xs-3 {
-	float: left;
 	width: 25%;
-	position: releative;
-	min-height: 1px;
-	padding-left: 15px;
-	padding-right: 15px;
+	position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.col-xs-9 {
+	float: left;
+	width: 75%;
+	position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.th,td {
+	padding: 8px;
+	line-height: 1.42857143;
+	vertical-align: top;
+	border-top: 1px solid #ddd;
+}
+
+.a {
+	cursor: pointer;
+}
+
+.img {
+	border: 0;
 }

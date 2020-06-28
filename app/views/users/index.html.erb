@@ -2,40 +2,36 @@
 
 <%= render 'users/template', user: @user, book: @book %>
 
-		<div class="col-sm-9">
-			<h2>Users</h2>
-			<table class="table">
-				<thead>
+	<div class="col-sm-9">
+		<h2>Users</h2>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>image</th>
+					<th>name</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @users.each do |user| %>
 					<tr>
-						<th>image</th>
-						<th>name</th>
-						<th></th>
+						<td>
+							<div class="img">
+						  <%= attachment_image_tag user, :profile_image, :fill, 20, 20, format: 'jpg',fallback: "no_image.jpg" %>
+						</div>
+						</td>
+
+						<td>
+						  <%= user.name %>
+						</td>
+						<td>
+						<%= link_to "Show", user_path(user.id) %>
+						</td>
 					</tr>
-				</thead>
-				<tbody>
-					<% @users.each do |user| %>
-						<tr>
-							<td>
-							  <%= attachment_image_tag user, :profile_image, :fill, 20, 20,
-	format: 'jpeg',fallback: "no_image.jpg" %>
-							</td>
-
-							<td>
-							  <%= user.name %>
-							</td>
-							<td>
-							<%= link_to "Show", user_path(user.id) %>
-							</td>
-						</tr>
-					<% end %>
-				</tbody>
-			</table>
-		</div>
-
-		<div class="row">
-			<div class="col-sm-4"></div>
-			<div class="col-sm-4"></div>
-			<div class="col-sm-4">CopyRight Infratop.inc</div>
-		</div>
+				<% end %>
+			</tbody>
+		</table>
 	</div>
 </div>
+
+<%= render 'users/template2' %>

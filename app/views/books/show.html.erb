@@ -1,13 +1,29 @@
-<div class = "row">
-
 <%= render 'users/template', user: @user, book: @book %>
- <p><strong>Title:</strong>
-<%= @book.title %></p>
- <p><strong>Body:</strong>
-<%= @book.body %></p>
+	<div class="col-sm-9">
+		<h2>Book detail</h2>
+		<table class="table">
+			<tbody>
+					<td>
+					</td>
 
-<div class="pagination">
-    <%= link_to "Edit", edit_book_path(@book.id) %>
-    |
-    <%= link_to "Back", '/books' %>
+					<td>
+						<%= @book.title %>
+					</td>
+
+					<td>
+						<%= @book.body %>
+					</td>
+
+					<td>
+					<%= link_to"Edit", edit_book_path,class: "btn btn-success" %>
+					</td>
+
+					<td><%= link_to"Destroy", book_path(:id), method: :delete, class: "btn btn-link", "data-confirm" => "本当に消しますか？" %>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 </div>
+
+<%= render 'users/template2' %>
