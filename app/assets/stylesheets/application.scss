@@ -16,8 +16,28 @@
     @import "bootstrap-sprockets";
     @import "bootstrap";
 
+.navbar-fixed-top {
+	top: 0;
+	border-width: 0 0 1px;
+}
+
 .header_title {
 	font-size: 20px;
 	padding-top: 10px;
 	color: white;
+}
+
+.glyphicon {
+	font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+}
+
+.col-xs-3 {
+	float: left;
+	width: 25%;
+	position: releative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
 }

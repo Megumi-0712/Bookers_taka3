@@ -4,7 +4,8 @@ class UsersController < ApplicationController
     before_action :correct_user, only: [:edit, :update]
 
     def index
-        @user = User.find_by(id: params[:id])
+        @user = current_user
+        @book = Book.new
         @users = User.all
     end
 

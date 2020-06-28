@@ -10,38 +10,36 @@
 
   <body>
     <header class="navbar navbar-fixed-top navbar-inverse">
-      <nav class="navbar navbar-inverse navbar-static-top">
-        <div class="container">
-          <div class="navbar-header">
-            <span class="header_title">Bookers</span>
-          </div>
+      <div class="container">
+        <nav class="nav navbar-nav navbar-left">
+          <span class="header_title">Bookers</span>
+        </nav>
 
-          <ul class="nav navbar-nav navbar-right">
-          <% if user_signed_in? %>
-            <li><%= link_to user_path(current_user), class:"my-bt" do %>
-              <i class="glyphicon glyphicon-home"></i>　Home</li><% end %>
-            <li><%= link_to users_path, class:"my-bt" do %>
-              <i class="glyphicon glyphicon-user"></i>　Users</li><% end %>
-            <li><%= link_to books_path, class:"my-bt" do %>
-              <i class="glyphicon glyphicon-book"></i>　Books</li><% end %>
-            <li><%= link_to destroy_user_session_path,  method: :delete, class:"my-bt" do %>
-              <i class="glyphicon glyphic_pathog-in"></i>　logout</li><% end %>
-          <% else %>
-            <li><%= link_to root_path, class:"my-bt" do %>
-              <i class="glyphicon glyphicon-home"></i>　Home</li><% end %>
-            <li><%= link_to home_about_path, class:"my-bt" do %>
-              <i class="glyphicon glyphicon-link"></i>　About</li><% end %>
-            <li><%= link_to new_user_registration_path, class:"my-bt" do %>
-              <i class="glyphicon glyphicon-user"></i>　Sign up</li><% end %>
-            <li><%= link_to new_user_session_path, class:"my-bt" do %>
+        <nav>
+        <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+          <li><%= link_to user_path(current_user), class:"my-bt" do %>
+            <i class="glyphicon glyphicon-home"></i>　Home</li><% end %>
+          <li><%= link_to users_path, class:"my-bt" do %>
+            <i class="glyphicon glyphicon-user"></i>　Users</li><% end %>
+          <li><%= link_to books_path, class:"my-bt" do %>
+            <i class="glyphicon glyphicon-book"></i>　Books</li><% end %>
+          <li><%= link_to destroy_user_session_path,  method: :delete, class:"my-bt" do %>
+            <i class="glyphicon glyphicon-log-out"></i>　logout</li><% end %>
+        <% else %>
+          <li><%= link_to root_path, class:"my-bt" do %>
+            <i class="glyphicon glyphicon-home"></i>　Home</li><% end %>
+          <li><%= link_to home_about_path, class:"my-bt" do %>
+            <i class="glyphicon glyphicon-link"></i>　About</li><% end %>
+          <li><%= link_to new_user_registration_path, class:"my-bt" do %>
+            <i class="glyphicon glyphicon-user"></i>　Sign up</li><% end %>
+          <li><%= link_to new_user_session_path, class:"my-bt" do %>
               <i class="glyphicon glyphicon-log-in"></i>　login</li><% end %>
-          <% end %>
-          </ul>
-        </div>
+        <% end %>
+        </ul>
       </nav>
+      </div>
     </header>
-    <div class="container">
     <%= yield %>
-    <div>
   </body>
 </html>
