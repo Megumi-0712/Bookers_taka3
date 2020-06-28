@@ -1,26 +1,40 @@
-<h1><strong>Editing Book</strong></h1>
+<div class="body">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
 
-<% if @book.errors.any? %>
-	<%= pluralize(@book.errors.count, "error") %> prohibited this obj from being saved:
-	<% @book.errors.full_messages.each do |message| %>
-		<li><%= message %></li>
-	<% end %>
-<% end %>
+			<h1><strong>Editing Book</strong></h1>
 
-<!-- form_for部分 -->
-<%= form_for(@book,url:"/books/#{@book.id}") do |f| %>
+			<% if @book.errors.any? %>
+				<%= pluralize(@book.errors.count, "error") %> prohibited this obj from being saved:
+				<% @book.errors.full_messages.each do |message| %>
+					<li><%= message %></li>
+				<% end %>
+			<% end %>
 
-	<h3>Title</h3>
-	<%= f.text_field :title%>
+<!--<div class='col-md-3' col-md-offset3'>-->
 
-	<h3>Body</h3>
-	<%= f.text_area :body %><br>
+			<%= form_for(@book,url:"/books/#{@book.id}") do |f| %>
+			<div class="field row">
+				<h3>Title</h3>
+				<%= f.text_field :title%>
+			</div>
 
-	<%= f.submit 'Update Book' %>
-<% end %>
+			<div class="field row">
+				<h3>Body</h3>
+				<%= f.text_area :body %><br>
+			</div>
 
-    <%= link_to "Show",book_path(@book.id) %>
-    |
-    <%= link_to "Back",'/books' %>
+				<%= f.submit 'Update Book',class: "btn btn-primary col-xs-12"  %>
+			<% end %>
+
+			    <%= link_to "Show",book_path(@book.id) %>
+			    |
+			    <%= link_to "Back",'/books' %>
+			   </div>
+			<div class="col-md-3"></div>
+		</div>
+	</div>
+</div>
 
 <%= render 'users/template2' %>

@@ -1,9 +1,13 @@
 <%= render 'users/template', user: @user, book: @book %>
+<% if flash[:notice] %>
+<p><%= flash[:notice] %></p>
+<% end %>
 	<div class="col-sm-9">
 		<h2>Book detail</h2>
 		<table class="table">
 			<tbody>
 					<td><%= attachment_image_tag @user, :profile_image, :fill, 20, 20, format: 'jpg',fallback: "no_image.jpg" %>
+						<br><%= @user.name %>
 					</td>
 
 					<td>

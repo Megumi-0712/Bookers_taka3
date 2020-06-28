@@ -40,27 +40,24 @@
 .field row {
 	margin-bottom: 10px;
 }
+.col-xs-3, .col-xs-9, .col-xs-12 {
+	float: left;
+	position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
 
 .col-xs-3 {
 	width: 25%;
-	position: relative;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-.table {
-	border-collapse: collapse;
-	border-spacing: 0;
 }
 
 .col-xs-9 {
-	float: left;
 	width: 75%;
-	position: relative;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
+}
+
+.col-xs-12 {
+	width: 100%
 }
 
 .th,td {
@@ -68,6 +65,11 @@
 	line-height: 1.42857143;
 	vertical-align: top;
 	border-top: 1px solid #ddd;
+}
+
+.table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
 .a {
