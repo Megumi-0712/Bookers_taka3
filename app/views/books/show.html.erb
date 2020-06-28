@@ -18,12 +18,14 @@
 						<%= @book.body %>
 					</td>
 
+					<% if @book.user == current_user %>
 					<td>
 					<%= link_to"Edit", edit_book_path,class: "btn btn-success btn-xs" %>
 					</td>
 
 					<td><%= link_to"Destroy", book_path(@book.id), method: :delete, class: "btn btn-danger btn-xs", "data-confirm" => "本当に消しますか？" %>
 					</td>
+					<% end %>
 				</tr>
 			</tbody>
 		</table>
