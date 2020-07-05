@@ -5,7 +5,7 @@
 
 			<% if @user.errors.any? %>
 				<%= pluralize(@user.errors.count, "error") %> prohibited this obj from being saved:
-				<% user.errors.full_messages.each do |message| %>
+				<% @user.errors.full_messages.each do |message| %>
 					<%= message %>
 				<% end %>
 			<% end %>
@@ -20,10 +20,4 @@
 			<% end %>
 		</div>
 	</div>
-	<div class="row">
-				<div class="col-sm-4"></div>
-				<div class="col-sm-4"></div>
-				<div class="col-sm-4">CopyRight Infratop.inc</div>
-			</div>
-		</div>
 </div>

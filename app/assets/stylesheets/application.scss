@@ -16,9 +16,7 @@
     @import "bootstrap-sprockets";
     @import "bootstrap";
 
-.body {
-	margin-top: 51px;
-}
+
 
 .navbar-fixed-top {
 	top: 0;
@@ -40,6 +38,7 @@
 .field row {
 	margin-bottom: 10px;
 }
+
 .col-xs-3, .col-xs-9, .col-xs-12 {
 	float: left;
 	position: relative;

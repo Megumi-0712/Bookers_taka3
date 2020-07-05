@@ -40,7 +40,21 @@
       </nav>
       </div>
     </header>
-    <div class="body">
-    <%= yield %>
+    <div class= "container">
+      <div class="row">
+        <% if flash[:notice] %>
+          <p><%= flash[:notice] %></p>
+        <% end %>
+        <%= yield %>
+      </div>
+    </div>
+    <footer>
+      <div class="row">
+        <div class="col-md-9"></div>
+        <div class="col-md-3">
+          <p>CopyRight Infratop.inc</p>
+        </div>
+     </div>
+    </footer>
   </body>
 </html>
